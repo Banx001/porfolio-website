@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+╔══════════════════════════════════════════════════════════════════╗
+║         ALABI IBRAHIM EMMANUEL — PORTFOLIO WEBSITE               ║
+║                                                                  ║
+║  This website uses THREE files that must stay in the same folder:║
+║                                                                  ║
+║    index.html  ← You are here. All page content lives here.      ║
+║    style.css   ← All colours, fonts, sizes, and animations.      ║
+║    script.js   ← All interactive behaviour (cursor, reveals etc) ║
+║                                                                  ║
+║  IMAGES — keep all these in the same folder too:                 ║
+║    car-market.png        car-vehicle.png                         ║
+║    cancer-overview.png   cancer-severity.png  cancer-patient.png ║
+║    household.png                                                  ║
+║                                                                  ║
+║  HOW TO FIND WHAT TO EDIT:                                       ║
+║    Use Ctrl+F (or Cmd+F on Mac) and search for the text you      ║
+║    want to change. Every section has a large comment above it    ║
+║    explaining exactly what to edit.                              ║
+╚══════════════════════════════════════════════════════════════════╝
+-->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--
+    PAGE TITLE
+    ──────────
+    This is the text that appears in the browser tab.
+    Change it to whatever you like.
+  -->
+  <title>Alabi Ibrahim Emmanuel — Data Analyst</title>
+
+  <!--
+    GOOGLE FONTS
+    ─────────────
+    This loads the two fonts used on the site from the internet.
+    "Instrument Sans" is used for body text and navigation.
+    "Instrument Serif" is used for headings and your name.
+    Do not change this unless you want to swap fonts.
+  -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500;600&family=Instrument+Serif&display=swap"
+    rel="stylesheet"
+  />
+
+  <!--
+    STYLESHEET
+    ──────────
+    This connects the style.css file which controls how
+    everything looks — colours, spacing, animations, etc.
+  -->
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+  <!--
+  ════════════════════════════════════════════════════════════════
+  CUSTOM CURSOR
+  ─────────────
+  These two empty divs become the animated cursor dots that follow
+  the mouse. They are styled in style.css and moved by script.js.
+  You don't need to touch these.
+  ════════════════════════════════════════════════════════════════
+  -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+
+  <!--
+  ════════════════════════════════════════════════════════════════
+  NAVIGATION BAR
+  ──────────────
+  Fixed to the top of the page. Shows your initials on the left
+  and navigation links on the right.
+
+  TO CHANGE YOUR INITIALS:
+    Edit the text "AIE" inside <div class="nav-logo">
+
+  TO CHANGE A LINK LABEL:
+    Edit the text between <a ...> and </a>
+
+  TO CHANGE WHERE A LINK GOES:
+    Edit the href="#about" part. The # is followed by the id
+    of the section you want to scroll to. For example,
+    href="#projects" scrolls to <section id="projects">.
+  ════════════════════════════════════════════════════════════════
+  -->
+  <nav id="mainNav">
+
+    <!-- Your initials or short logo text -->
+    <div class="nav-logo">AIE</div>
+
+    <!-- Navigation links list -->
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+
+  <!--
+  ════════════════════════════════════════════════════════════════
+  HERO SECTION
+  ────────────
+  The first full-screen section visitors see. Contains your name,
+  tagline, a short bio, two buttons, and floating skill tags.
+
+  TO CHANGE YOUR ROLE / LOCATION:
+    Edit the text inside <p class="hero-tag">
+
+  TO CHANGE YOUR NAME:
+    Edit the text inside each <span class="word">
+    Keep each word in its own <span class="word"> tag
+    so the animation works correctly.
+
+  TO CHANGE THE BIO SENTENCE:
+    Edit the text inside <p class="hero-sub">
+
+  TO CHANGE BUTTON TEXT OR LINKS:
+    Edit the text and href inside each <a class="btn ...">
+    href="#projects" scrolls to the projects section
+    href="#contact" scrolls to the contact section
+
+  TO CHANGE THE FLOATING SKILL TAGS ON THE RIGHT:
+    Edit the text inside each <div class="float-tag">
+  ════════════════════════════════════════════════════════════════
+  -->
+  <section id="hero">
+
+    <!-- Animated background grid lines — drawn by script.js, do not edit -->
+    <div class="hero-bg" id="heroBg"></div>
+
+    <!-- Main hero text block -->
+    <div class="hero-inner">
+
+      <!-- Small label above your name, e.g. your role and city -->
+      <p class="hero-tag">Data Analyst · Lagos, Nigeria</p>
+
+      <!--
+        Your name — broken into words so each word animates in separately.
+        Each word goes inside <span class="word"> ... </span>
+        The <span class="br"></span> creates a line break between words.
+      -->
+      <h1 class="hero-name">
+        <span class="word">Alabi</span>
+        <span class="br"></span>
+        <span class="word">Ibrahim</span>
+        <span class="br"></span>
+        <span class="word">Emmanuel</span>
+      </h1>
+
+      <!-- One or two sentence value proposition / bio -->
+      <p class="hero-sub">
+        I transform raw data into clear decisions — building dashboards,
+        predictive models, and visual stories that drive smarter business outcomes.
+      </p>
+
+      <!-- Two call-to-action buttons -->
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+
+    </div>
+
+    <!--
+      Floating skill tags — positioned on the right side of the hero.
+      Each tag has a small dot and some text.
+      TO ADD A TAG: Copy one <div class="float-tag"> block and paste it.
+      TO REMOVE A TAG: Delete the whole <div class="float-tag"> block.
+    -->
+    <div class="hero-float">
+
+      <div class="float-tag">
+        <div class="float-dot"></div>
+        Excel
+      </div>
+
+      <div class="float-tag">
+        <div class="float-dot"></div>
+        Power Bi
+      </div>
+
+      <div class="float-tag">
+        <div class="float-dot"></div>
+        Tableau
+      </div>
+
+      <div class="float-tag">
+        <div class="float-dot"></div>
+        Python &amp; SQL
+      </div>
+
+    </div>
+
+    <!-- Animated "Scroll" indicator at the bottom centre — do not edit -->
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+
+  </section>
+
+  <!-- Thin horizontal dividing line between sections -->
+  <div class="divider"></div>
+
+
+  <!--
+  ════════════════════════════════════════════════════════════════
+  ABOUT SECTION
+  ─────────────
+  Left side: three short bio paragraphs.
+  Right side: four stat cards with animated numbers.
+
+  TO EDIT THE BIO TEXT:
+    Edit the paragraphs inside <div class="about-text">
+    Use <strong>text</strong> to make words bold.
+
+  TO EDIT THE STAT CARDS:
+    Each card has a number and a label.
+    - Cards with data-count="3" will count up from 0 to 3 on scroll.
+      Change the number in data-count="X" to set the target number.
+    - Cards without data-count just show static text.
+    - Edit the label in <div class="stat-label">
+
+  TO ADD A STAT CARD:
+    Copy one <div class="stat-card"> block and paste it
+    inside <div class="stats-grid">
+  ════════════════════════════════════════════════════════════════
+  -->
+  <section id="about">
+    <div class="section-wrap">
+
+      <!-- Section label (small text above the heading) -->
+      <p class="section-label reveal">Who I Am</p>
+
+      <!-- Section heading -->
+      <h2 class="section-title reveal">
+        Analyst.<br />Problem solver.
+      </h2>
+
+      <!-- Two-column grid: bio on left, stats on right -->
+      <div class="about-grid">
+
+        <!-- Left column: bio paragraphs -->
+        <div class="about-text reveal-left">
+
+          <p>
+           
+            I am <strong>Alabi Ibrahim Emmanuel</strong>, a data analyst based in Nigeria. I specialize in transforming raw, complex datasets into clear insights that organisations can act on — delivered through interactive dashboards and data-driven storytelling.
+
+          </p>
+
+
+          <p>
+            My toolkit spans the full data pipeline: from querying and cleaning
+            with <strong>SQL and Python</strong>, to visualising in
+            <strong>Power BI and Tableau</strong>, through to
+            <strong>machine learning</strong> with regression, classification,
+            and clustering.
+          </p>
+
+        </div>
+
+        <!-- Right column: stat cards (stagger = they animate in one by one) -->
+        <div class="stats-grid stagger reveal-right">
+
+          <!--
+            data-count="1" makes the number count up from 0 to 1 when scrolled into view.
+            Remove data-count and change the "0" to your text if you want it static.
+          -->
+          <div class="stat-card">
+            <div class="stat-num" data-count="1">0</div>
+            <div class="stat-label">Year Experience</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-num" data-count="3">0</div>
+            <div class="stat-label">Projects Delivered</div>
+          </div>
+
+          <!-- No data-count here — this is static text -->
+          <div class="stat-card">
+            <div class="stat-num">6+</div>
+            <div class="stat-label">Tools Mastered</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-num">B.Eng</div>
+            <div class="stat-label">Computer Engineering</div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!--
+  ════════════════════════════════════════════════════════════════
+  EXPERIENCE SECTION
+  ──────────────────
+  Each job is inside a <div class="exp-item"> block.
+
+  TO EDIT A JOB:
+    - Change the title inside <div class="exp-role">
+    - Change the company inside <div class="exp-org">
+    - Change the date range inside <div class="exp-date">
+    - Edit the bullet points inside <ul class="exp-bullets">
+      Each bullet is a <li> item.
+
+  TO ADD A NEW JOB:
+    Copy the block between "── JOB BLOCK START ──" and
+    "── JOB BLOCK END ──" and paste it before the closing </div>
+    of <div class="exp-list">
+
+  TO REMOVE A JOB:
+    Delete the whole block from one exp-item div to its closing </div>
+  ════════════════════════════════════════════════════════════════
+  -->
+  <section id="experience">
+    <div class="section-wrap experience-bg">
+
+      <p class="section-label reveal">Where I Have Worked</p>
+      <h2 class="section-title reveal">Experience</h2>
+
+      <div class="exp-list">
+
+
+        <!-- ── JOB BLOCK START ── -->
+        <div class="exp-item reveal">
+
+          <div class="exp-header">
+
+            <!-- Job title and company name -->
+            <div class="exp-title-group">
+              <div class="exp-role">Data Analyst Tutor</div>
+              <div class="exp-org">Tech Talent Academy</div>
+            </div>
+
+            <!-- Date range -->
+            <div class="exp-date">Mar 2025 —  Oct 2025</div>
+
+          </div>
+
+          <!-- Bullet points — each <li> is one bullet -->
+          <ul class="exp-bullets">
+            <li>Teaching data analytics concepts and tools to students, guiding them through hands-on projects in Excel, Power BI, and Tableau.</li>
+            <li>Taught students data visualization, sales analysis, and dataset cleaning using tools like Power BI, Tableau, DAX, Excel Power Pivot, Power Query, and Python (pandas).</li>
+            <li>Taught students on data preprocessing techniques for machine learning and software project management principles for planning and delivering data projects.</li>
+          </ul>
+
+        </div>
+        <!-- ── JOB BLOCK END ── -->
+
+
+        <!-- ── JOB BLOCK START ── -->
+        <div class="exp-item reveal">
+
+          <div class="exp-header">
+
+            <div class="exp-title-group">
+              <div class="exp-role">Data Analyst</div>
+              <div class="exp-org">Ennylytics</div>
+            </div>
+
+            <div class="exp-date">Jan 2026, Present</div>
+
+          </div>
+
+          <ul class="exp-bullets">
+            <li>Collected and compiled company information and business data across Nigeria for use on the Ennylytics platform, ensuring comprehensive and up-to-date coverage.</li>
+            <li>Cleaned, standardized, and validated raw datasets using Excel, SQL, and Python (pandas) to ensure data quality and consistency before loading into the platform.</li>
+            <li>Wrote and optimized SQL queries in Supabase to retrieve, filter, and manage structured data efficiently across relational tables.</li>
+            <li>Collaborated with the team to maintain the integrity of the database, performing routine data audits and resolving inconsistencies in company records.</li>
+            <li>Transformed and formatted collected data for seamless integration into the Ennylytics site, supporting accurate and reliable information delivery to end users.</li>
+          </ul>
+
+        </div>
+        <!-- ── JOB BLOCK END ── -->
+
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!--
+  ════════════════════════════════════════════════════════════════
+  SKILLS SECTION
+  ──────────────
+  Six skill cards in a 3-column grid.
+  Each card has a title, skill tags (pills), and a progress bar.
+
+  TO EDIT A SKILL CARD:
+    - Change the category name in <div class="skill-group-title">
+    - Add or remove <span class="skill-tag"> items inside .skill-tags
+    - Change data-width="90" to set the bar fill percentage (0 to 100)
+    - Change the "90%" text in <span class="skill-bar-pct"> to match
+
+  TO ADD A NEW SKILL CARD:
+    Copy one full block from "── SKILL CARD START ──" to
+    "── SKILL CARD END ──" and paste it inside .skills-grid
+
+  TO REMOVE A SKILL CARD:
+    Delete the block from one .skill-group div to its closing </div>
+  ════════════════════════════════════════════════════════════════
+  -->
+  <section id="skills">
+    <div class="section-wrap">
+
+      <p class="section-label reveal">What I Work With</p>
+      <h2 class="section-title reveal">Skills &amp; Tools</h2>
+
+      <!-- stagger = cards animate in one by one as you scroll -->
+      <div class="skills-grid stagger reveal">
+
+
+        <!-- ── SKILL CARD START ── -->
+        <div class="skill-group">
+
+          <div class="skill-group-title">Data Analysis</div>
+
+          <!-- Skill tags — add or remove <span class="skill-tag"> as needed -->
+          <div class="skill-tags">
+            <span class="skill-tag">DAX</span>
+            <span class="skill-tag">Power Pivot</span>
+            <span class="skill-tag">Calculated Fields</span>
+            <span class="skill-tag">Parameters</span>
+          </div>
+
+          <!-- Progress bar — change data-width and the % text to match -->
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-row">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-bar-pct">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="90"></div>
+            </div>
+          </div>
+
+        </div>
+        <!-- ── SKILL CARD END ── -->
+
+
+      
+
+
+        <!-- ── SKILL CARD START ── -->
+        <div class="skill-group">
+
+          <div class="skill-group-title">Machine Learning</div>
+
+          <div class="skill-tags">
+            <span class="skill-tag">Regression</span>
+            <span class="skill-tag">Classification</span>
+            <span class="skill-tag">Clustering</span>
+            <span class="skill-tag">XGBoost</span>
+            <span class="skill-tag">Naive Bayes</span>
+            <span class="skill-tag">SVM</span>
+          </div>
+
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-row">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-bar-pct">75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="75"></div>
+            </div>
+          </div>
+
+        </div>
+        <!-- ── SKILL CARD END ── -->
+
+
+        <!-- ── SKILL CARD START ── -->
+        <div class="skill-group">
+
+          <div class="skill-group-title">Data Cleaning</div>
+
+          <div class="skill-tags">
+            <span class="skill-tag">Data Wrangling</span>
+            <span class="skill-tag">Feature Scaling</span>
+            <span class="skill-tag">Outlier Detection</span>
+            <span class="skill-tag">Power Query</span>
+          </div>
+
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-row">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-bar-pct">88%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="88"></div>
+            </div>
+          </div>
+
+        </div>
+        <!-- ── SKILL CARD END ── -->
+
+
+        <!-- ── SKILL CARD START ── -->
+        <div class="skill-group">
+
+          <div class="skill-group-title">Visualisation</div>
+
+          <div class="skill-tags">
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Tableau</span>
+            <span class="skill-tag">Excel</span>
+            <span class="skill-tag">KPI Tracking</span>
+          </div>
+
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-row">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-bar-pct">92%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="92"></div>
+            </div>
+          </div>
+
+        </div>
+        <!-- ── SKILL CARD END ── -->
+
+
+        <!-- ── SKILL CARD START ── -->
+        <div class="skill-group">
+
+          <div class="skill-group-title">Database &amp; Querying</div>
+
+          <div class="skill-tags">
+            <span class="skill-tag">SQL Server</span>
+            <span class="skill-tag">SSMS</span>
+            <span class="skill-tag">Joins</span>
+            <span class="skill-tag">Window Functions</span>
+            <span class="skill-tag">Data Modeling</span>
+          </div>
+
+          <div class="skill-bar-wrap">
+            <div class="skill-bar-row">
+              <span class="skill-bar-label">Proficiency</span>
+              <span class="skill-bar-pct">82%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" data-width="82"></div>
+            </div>
+          </div>
+
+        </div>
+        <!-- ── SKILL CARD END ── -->
+
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!--
+  ════════════════════════════════════════════════════════════════
+  PROJECTS SECTION
+  ────────────────
+  Each project is a clickable row. When clicked it expands to show
+  a full description, key metrics, tools, steps, and screenshots.
+
+  HOW TO EDIT A PROJECT:
+    Find the project by its number comment (e.g. "PROJECT 1")
+    Then edit:
+      - The name in <span class="project-name">
+      - The tag pills in .project-tags-inline
+      - The summary text in <p class="detail-body">
+      - The metric tags in the "Key Metrics" .detail-tools block
+      - The tools in the "Tools Used" .detail-tools block
+      - The step descriptions in <ul class="detail-steps">
+      - The image file names in src="car-market.png" etc.
+
+  HOW TO ADD A PROJECT:
+    1. Copy one full project block (from PROJECT BLOCK START to END)
+    2. Paste it inside <div class="projects-list">
+    3. Change data-index="0" to the next number (e.g. data-index="3")
+    4. Change onclick="toggleProject(0)" to match (e.g. toggleProject(3))
+    5. Update all the content
+
+  HOW TO REMOVE A PROJECT:
+    Delete the block from PROJECT BLOCK START to END
+
+  NOTE about images:
+    src="car-market.png" — the filename must exactly match your image file
+    in the same folder. Change it to match your own file names.
+  ════════════════════════════════════════════════════════════════
+  -->
+  <section id="projects">
+    <div class="section-wrap">
+
+      <p class="section-label reveal">What I Have Built</p>
+      <h2 class="section-title reveal">Freelance Projects</h2>
+      <p class="project-hint reveal">Click any project to see the full breakdown.</p>
+
+      <div class="projects-list reveal">
+
+
+        <!-- ══════════════════════════════════════════
+          PROJECT BLOCK START — PROJECT 1
+          Car Sales Insights Dashboard
+        ══════════════════════════════════════════ -->
+        <div class="project-item" data-index="0">
+
+          <!--
+            The clickable row — this is always visible.
+            onclick="toggleProject(0)" opens/closes this project.
+            The 0 must match data-index="0" above.
+          -->
+          <div class="project-row" onclick="toggleProject(0)">
+
+            <div class="project-left">
+              <span class="project-num">01</span>
+              <span class="project-name">Car Sales Insights Dashboard</span>
+              <div class="project-tags-inline">
+                <span class="project-tag-sm">Power BI</span>
+                <span class="project-tag-sm">DAX</span>
+                <span class="project-tag-sm">Power Query</span>
+              </div>
+            </div>
+
+            <!-- The + button that rotates into an X when open -->
+            <div class="project-toggle">+</div>
+
+          </div>
+
+          <!-- The hidden panel that slides open when clicked -->
+          <div class="project-detail">
+            <div class="project-detail-inner">
+              <div class="project-detail-content">
+
+                <!-- LEFT COLUMN: text -->
+                <div class="project-text-col">
+
+                  <p class="detail-section-title">Summary</p>
+                  <p class="detail-body">
+                    Built to better understand car pricing and vehicle characteristics
+                    using real listing data, with a focus on the factors that actually
+                    influence value. Rather than treating price as a single number,
+                    the dashboard highlights how vehicle features — mileage, engine
+                    volume, body type, drive mode — contribute to where a car sits
+                    in the market.
+                  </p>
+
+                  <p class="detail-section-title">Key Metrics</p>
+                  <div class="detail-tools">
+                    <span class="detail-tool">Total Cars: 8,739</span>
+                    <span class="detail-tool">Max Price: 547,800</span>
+                    <span class="detail-tool">Min Price: 259.35</span>
+                    <span class="detail-tool">Highest: Land Rover Range Rover</span>
+                    <span class="detail-tool">Lowest: GAZ-21</span>
+                  </div>
+
+                  <p class="detail-section-title">Tools Used</p>
+                  <div class="detail-tools">
+                    <span class="detail-tool">Power BI</span>
+                    <span class="detail-tool">DAX</span>
+                    <span class="detail-tool">Power Query</span>
+                    <span class="detail-tool">Excel</span>
+                  </div>
+
+                  <p class="detail-section-title">How It Was Built</p>
+                  <ul class="detail-steps">
+                    <li>
+                      <span class="step-num">01</span>
+                      <span>Imported and cleaned real car listing data using Power Query — standardised columns, removed duplicates, and handled missing mileage and price values.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">02</span>
+                      <span>Built KPI cards showing total cars, highest and lowest priced vehicles, max and min prices, mileage extremes, and engine volume limits.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">03</span>
+                      <span>Created a Market Overview page with Top 10 and Bottom 10 car types by price, body type distribution, and engine type breakdown.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">04</span>
+                      <span>Built a Vehicle Features page showing mileage by car count, car count by year made, drive type distribution, and registration label breakdown.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">05</span>
+                      <span>Used DAX to calculate aggregated pricing metrics, percentage breakdowns by engine type, and comparative ranking across brands.</span>
+                    </li>
+                  </ul>
+
+                </div>
+
+                <!-- RIGHT COLUMN: dashboard screenshots -->
+                <div class="dash-img-stack">
+
+                  <div class="dash-img-block">
+                    <p class="detail-section-title">Page 1 — Market Overview</p>
+                    <div class="dash-img-wrap">
+                      <!--
+                        src="car-market.png" — change this to match your image filename.
+                        alt="..." — describe the image for accessibility.
+                      -->
+                      <img
+                        src="1.1.png"
+                        alt="Car Sales Dashboard — Market Overview page"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="dash-img-block">
+                    <p class="detail-section-title">Page 2 — Vehicle Features</p>
+                    <div class="dash-img-wrap">
+                      <img
+                        src="1.png"
+                        alt="Car Sales Dashboard — Vehicle Features page"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- PROJECT BLOCK END — PROJECT 1 -->
+
+
+        <!-- ══════════════════════════════════════════
+          PROJECT BLOCK START — PROJECT 2
+          Cancer Patient Analysis Dashboard
+        ══════════════════════════════════════════ -->
+        <div class="project-item" data-index="1">
+
+          <div class="project-row" onclick="toggleProject(1)">
+            <div class="project-left">
+              <span class="project-num">02</span>
+              <span class="project-name">Cancer Patient Analysis Dashboard</span>
+              <div class="project-tags-inline">
+                <span class="project-tag-sm">Power BI</span>
+                <span class="project-tag-sm">Power Query</span>
+                <span class="project-tag-sm">DAX</span>
+              </div>
+            </div>
+            <div class="project-toggle">+</div>
+          </div>
+
+          <div class="project-detail">
+            <div class="project-detail-inner">
+              <div class="project-detail-content">
+
+                <div class="project-text-col">
+
+                  <p class="detail-section-title">Summary</p>
+                  <p class="detail-body">
+                    A 3-page cancer analytics dashboard built to understand the key
+                    factors influencing patient outcomes. Higher severity scores
+                    strongly correlate with reduced survival years, Stage IV cases
+                    remain the most significant driver of poor outcomes, and treatment
+                    costs rise substantially as severity increases.
+                  </p>
+
+                  <p class="detail-section-title">Key Metrics</p>
+                  <div class="detail-tools">
+                    <span class="detail-tool">Avg Survival: 5 years</span>
+                    <span class="detail-tool">Avg Age: 54</span>
+                    <span class="detail-tool">% Stage IV: 19.80%</span>
+                    <span class="detail-tool">% High Severity: 4.48%</span>
+                    <span class="detail-tool">Avg Severity Score: 4.95</span>
+                    <span class="detail-tool">Highest Treatment Cost: $100,000</span>
+                    <span class="detail-tool">Avg Treatment Cost: $52,467</span>
+                  </div>
+
+                  <p class="detail-section-title">Tools Used</p>
+                  <div class="detail-tools">
+                    <span class="detail-tool">Power BI</span>
+                    <span class="detail-tool">Power Query</span>
+                    <span class="detail-tool">DAX</span>
+                    <span class="detail-tool">Excel</span>
+                  </div>
+
+                  <p class="detail-section-title">How It Was Built</p>
+                  <ul class="detail-steps">
+                    <li>
+                      <span class="step-num">01</span>
+                      <span>Cleaned and transformed raw patient records in Power Query — resolved missing values and standardised clinical labels across cancer types, stages, and age groups.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">02</span>
+                      <span>Built an Overview Section with KPIs for treatment cost, average age, patient count by cancer type and country, and gender distribution.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">03</span>
+                      <span>Built a Severity Section tracking avg survival year, % Stage IV cancer, patient count trends by year (2015–2024), and patients by survival risk.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">04</span>
+                      <span>Built a Patient Record Section showing severity breakdowns by cancer type and stage, age group analysis, and avg treatment cost by severity score.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">05</span>
+                      <span>Used DAX to calculate percentage measures and aggregated KPIs, enabling a structured view of disease progression and financial implications.</span>
+                    </li>
+                  </ul>
+
+                </div>
+
+                <div class="dash-img-stack">
+
+                  <div class="dash-img-block">
+                    <p class="detail-section-title">Page 1 — Overview Section</p>
+                    <div class="dash-img-wrap">
+                      <img
+                        src="2.png"
+                        alt="Cancer Patient Analysis — Overview Section"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="dash-img-block">
+                    <p class="detail-section-title">Page 2 — Severity Section</p>
+                    <div class="dash-img-wrap">
+                      <img
+                        src="2.2.png"
+                        alt="Cancer Patient Analysis — Severity Section"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="dash-img-block">
+                    <p class="detail-section-title">Page 3 — Patient Record</p>
+                    <div class="dash-img-wrap">
+                      <img
+                        src="2.3.png"
+                        alt="Cancer Patient Analysis — Patient Record"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- PROJECT BLOCK END — PROJECT 2 -->
+
+
+        <!-- ══════════════════════════════════════════
+          PROJECT BLOCK START — PROJECT 3
+          Daily Household Transactions Dashboard
+        ══════════════════════════════════════════ -->
+        <div class="project-item" data-index="2">
+
+          <div class="project-row" onclick="toggleProject(2)">
+            <div class="project-left">
+              <span class="project-num">03</span>
+              <span class="project-name">Daily Household Transactions Dashboard</span>
+              <div class="project-tags-inline">
+                <span class="project-tag-sm">Power BI</span>
+                <span class="project-tag-sm">DAX</span>
+                <span class="project-tag-sm">Power Query</span>
+              </div>
+            </div>
+            <div class="project-toggle">+</div>
+          </div>
+
+          <div class="project-detail">
+            <div class="project-detail-inner">
+              <div class="project-detail-content">
+
+                <div class="project-text-col">
+
+                  <p class="detail-section-title">Summary</p>
+                  <p class="detail-body">
+                    In most households, daily spending happens so automatically that
+                    we rarely pause to track it. This dashboard was created to address
+                    that gap — turning four years of scattered household transactions
+                    into a clear, organised financial story. It enables informed
+                    planning, smarter budgeting, and better financial decisions by
+                    making spending patterns visible across categories, years, and
+                    payment methods.
+                  </p>
+
+                  <p class="detail-section-title">Key Metrics</p>
+                  <div class="detail-tools">
+                    <span class="detail-tool">Total Spent: INR 1,253,708</span>
+                    <span class="detail-tool">Max Transaction: INR 50,000</span>
+                    <span class="detail-tool">Avg Amount: INR 688</span>
+                    <span class="detail-tool">Amount Invested: 21.52%</span>
+                    <span class="detail-tool">Top Sub-Category: Home (INR 204,506)</span>
+                  </div>
+
+                  <p class="detail-section-title">Tools Used</p>
+                  <div class="detail-tools">
+                    <span class="detail-tool">Power BI</span>
+                    <span class="detail-tool">DAX</span>
+                    <span class="detail-tool">Power Query</span>
+                    <span class="detail-tool">Excel</span>
+                  </div>
+
+                  <p class="detail-section-title">How It Was Built</p>
+                  <ul class="detail-steps">
+                    <li>
+                      <span class="step-num">01</span>
+                      <span>Imported and cleaned four years of raw household transaction records — standardised categories, resolved date formats, and flagged inconsistent payment entries.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">02</span>
+                      <span>Built a yearly spending trend chart (2015–2018) revealing peak spending in 2017 (INR 464,870) and a subsequent decline in 2018 (INR 393,633).</span>
+                    </li>
+                    <li>
+                      <span class="step-num">03</span>
+                      <span>Created a Top 10 Sub-Category breakdown: Home (INR 204,506), Public Provident Fund (INR 150,000), Bike (INR 94,593), and Appliances (INR 82,081).</span>
+                    </li>
+                    <li>
+                      <span class="step-num">04</span>
+                      <span>Grouped transactions into broad categories — Investment, Money Transfer, Transportation, Household, Food, Family — for high-level comparison.</span>
+                    </li>
+                    <li>
+                      <span class="step-num">05</span>
+                      <span>Added a Mode of Payment breakdown: 78% Saving Bank Account, 14% Credit Card, 8% Cash — surfacing payment preferences and transaction patterns.</span>
+                    </li>
+                  </ul>
+
+                </div>
+
+                <div class="dash-img-stack">
+
+                  <div class="dash-img-block">
+                    <p class="detail-section-title">Dashboard</p>
+                    <div class="dash-img-wrap">
+                      <img
+                        src="3.png".png"
+                        alt="Daily Household Transactions Dashboard"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- PROJECT BLOCK END — PROJECT 3 -->
+
+
+      </div><!-- end .projects-list -->
+    </div><!-- end .section-wrap -->
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!--
+  ════════════════════════════════════════════════════════════════
+  EDUCATION SECTION
+  ─────────────────
+  TO EDIT:
+    - Change the degree text in <div class="edu-degree">
+    - Change the school name in <div class="edu-school">
+    - Change the graduation year in <div class="edu-badge">
+
+  TO ADD ANOTHER DEGREE:
+    Copy the entire <div class="edu-card"> block and paste it
+    below the existing one, inside the section-wrap div.
+  ════════════════════════════════════════════════════════════════
+  -->
+  <section id="education">
+    <div class="section-wrap">
+
+      <p class="section-label reveal">Academic Background</p>
+      <h2 class="section-title reveal">Education</h2>
+
+      <!-- Education card -->
+      <div class="edu-card reveal">
+
+        <div class="edu-info">
+          <div class="edu-degree">Bachelor of Engineering — Computer Engineering</div>
+          <div class="edu-school">Olabisi Onabanjo University, Ogun State</div>
+        </div>
+
+        <div class="edu-badge">Graduated May 2024</div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+
+  <!--
+  ════════════════════════════════════════════════════════════════
+  CONTACT SECTION
+  ───────────────
+  TO CHANGE YOUR EMAIL:
+    1. In href="mailto:ealabi03@gmail.com" — replace with your email
+    2. Also replace the visible text "ealabi03@gmail.com"
+
+  TO CHANGE YOUR PHONE:
+    1. In href="tel:+2348068258971" — replace with your number
+       (no spaces, include country code e.g. +234...)
+    2. Also replace the visible text "+234 806 825 8971"
+
+  TO ADD YOUR GITHUB LINK:
+    Replace href="#" with your full GitHub URL
+    e.g. href="https://github.com/yourusername"
+
+  TO ADD ANOTHER LINK:
+    Copy one <a class="social-link"> block and paste it.
+  ════════════════════════════════════════════════════════════════
+  -->
+  <section id="contact">
+    <div class="section-wrap contact-wrap">
+
+      <p class="section-label reveal">Say Hello</p>
+      <h2 class="section-title reveal">Let's Work Together</h2>
+
+      <!-- Short description text -->
+      <p class="contact-sub reveal">
+        Have a dataset that needs clarity? A dashboard that needs building?
+        I would love to hear about it.
+      </p>
+
+      <!--
+        Email address link — large clickable text.
+        Update BOTH the href AND the visible text below.
+      -->
+      <a href="mailto:ealabi03@gmail.com" class="contact-email reveal">
+        ealabi03@gmail.com
+      </a>
+
+      <!-- Row of contact / social links -->
+      <div class="social-links reveal">
+
+        <!-- Phone number -->
+        <a href="tel:+2348068258971" class="social-link">
+          +234 806 825 8971
+        </a>
+
+        <!-- LinkedIn — replace the URL with your profile link -->
+        <a
+          href="https://www.linkedin.com/in/alabi-emmanuel-0b32582a3"
+          target="_blank"
+          class="social-link"
+        >
+          LinkedIn
+        </a>
+
+        <!-- GitHub — replace # with your GitHub profile URL -->
+        <a href="#" class="social-link">
+          GitHub
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!--
+  ════════════════════════════════════════════════════════════════
+  FOOTER
+  ──────
+  The small bar at the very bottom of the page.
+  TO EDIT: Change the name and year.
+  ════════════════════════════════════════════════════════════════
+  -->
+  <footer>
+    <p>© 2026 Alabi Ibrahim Emmanuel — Data Analyst</p>
+  </footer>
+
+
+  <!--
+    JAVASCRIPT FILE
+    ───────────────
+    This connects the script.js file which powers all the
+    interactive effects: cursor, scroll animations, count-up
+    numbers, skill bar fills, project expand/collapse, etc.
+    Keep this at the bottom of the page.
+  -->
+  <script src="script.js"></script>
+
+<button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">&#8593;</button>
+</body>
+</html>
